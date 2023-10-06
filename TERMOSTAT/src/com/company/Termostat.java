@@ -1,9 +1,9 @@
 package com.company;
-
 import java.util.concurrent.TimeUnit;
 
-public class Termostat {
-    private int aktualna = 14;
+
+ public class Termostat{
+    private int aktualna = 40;
     private int ustawiona = 20;
     private boolean ogrzewanie = false;
     private boolean chlodzenie = false;
@@ -51,12 +51,15 @@ public class Termostat {
             System.out.println("Aktualna temperatura wynosi: " + this.aktualna);
             System.out.println("Podana temperatura: " + this.ustawiona);
             this.wlaczChlodzenie();
-            while (this.aktualna > this.ustawiona) --this.aktualna;
-            System.out.println("Aktualna temperatura wynosi: " + this.aktualna);
-            TimeUnit.SECONDS.sleep(1L);
-        }
-        this.wylaczChlodzenie();
+            while (this.aktualna > this.ustawiona) {
+                --this.aktualna;
+                System.out.println("Aktualna temperatura wynosi: " + this.aktualna);
+                TimeUnit.SECONDS.sleep(1L);
+            }
+
+        }this.wylaczChlodzenie();
     }
 
 }
-}
+
+
